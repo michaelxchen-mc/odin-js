@@ -42,7 +42,7 @@ function game() {
   let playerScore = 0;
   let compScore = 0;
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 5; i++) {
     let computerSelection = computerPlay();
     let playerSelection = prompt("please choose paper, rock, or scissors").toLowerCase();
     let result = playRound(computerSelection, playerSelection);
