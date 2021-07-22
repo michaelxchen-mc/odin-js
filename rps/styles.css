@@ -1,0 +1,88 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lucida Console";
+  font-size: 24px;
+  color: white;
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+header {
+  font-size: 50px;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+#match-container > p {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+#match-container-player-hand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#match-container-result {
+  text-align: center;
+}
+.player-hand {
+  color: black;
+  font-size: 150px;
+  border: 8px solid black;
+  padding: 2px 10px;
+  margin: 20px;
+  cursor: pointer;
+
+  background: #6190E8;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  transition: all 1s ease;
+}
+.clicked {
+  box-shadow:
+    inset 0 0 50px #fff,      /* inner white */
+    inset 20px 0 80px #f0f,   /* inner left magenta short */
+    inset -20px 0 80px #0ff,  /* inner right cyan short */
+    inset 20px 0 300px #f0f,  /* inner left magenta broad */
+    inset -20px 0 300px #0ff, /* inner right cyan broad */
+    0 0 50px #fff,            /* outer white */
+    -10px 0 80px #f0f,        /* outer left magenta */
+    10px 0 80px #0ff;         /* outer right cyan */
+  transform: scale(1.1);
+}
+
+#score-table-container {
+  display: grid;
+  grid-template-areas: 'score score' 'player computer' 'playerScore compScore' 'finalResult finalResult';
+  grid-template-columns: 300px 300px;
+  grid-gap: 10px;
+  padding: 10px;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+#score-table-score {
+  grid-area: score;
+  font-size: 30px;
+}
+#score-table-player {
+  grid-area: player;
+}
+#score-table-computer {
+  grid-area: computer;
+}
+#score-table-playerScore {
+  grid-area: playerScore;
+}
+#score-table-compScore {
+  grid-area: compScore;
+}
+#score-table-finalResult {
+  grid-area: finalResult;
+}

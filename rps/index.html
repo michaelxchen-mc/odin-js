@@ -3,10 +3,42 @@
 <head>
  <meta charset="UTF-8">
  <title>title</title>
+ <link rel="stylesheet" type="text/css" href="reset.css">
+ <link rel="stylesheet" href="styles.css">
+ <script src="https://kit.fontawesome.com/56d88cc25a.js" crossorigin="anonymous"></script>
 </head>
-
- <script src="scripts.js"></script> 
 <body>
+<header>
+  <h1>ROCK PAPER SCISSORS</h1>
+</header>
 
+<section id="match-container">
+  <p>Choose your hand</p>
+  <div id="match-container-player-hand">
+    <div id="rock" class="player-hand">
+      <i class="fas fa-hand-rock"></i>
+    </div>
+
+    <div id="paper" class="player-hand">
+      <i class="fas fa-hand-paper"></i>
+    </div>
+
+    <div id="scissors" class="player-hand">
+      <i class="fas fa-hand-scissors"></i>
+    </div>
+  </div>
+  <div id="match-container-result"></div>
+</section>
+
+<section id="score-table-container">
+  <div id="score-table-score">SCORE</div>
+  <div id="score-table-player">PLAYER</div>
+  <div id="score-table-playerScore"></div>
+  <div id="score-table-computer">COMPUTER</div>
+  <div id="score-table-compScore"></div>
+  <div id="score-table-finalResult"></div>
+</section>
+
+ <script src="scripts.js"></script>
 </body>
 </html>

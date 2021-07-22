@@ -1,8 +1,14 @@
+// improve scoretable logic to be automatic in playround()
+//how to remove event listener properly
+function removeTransition(event) {
+  if (event.propertyName !== 'transform') return;
+  event.target.classList.remove('clicked');
+}
 function computerPlay () {
   const hands = ["paper", "rock", "scissors"];
   return hands[Math.floor((Math.random()* hands.length))];
 }
-function playRound (computerSelection, playerSelection) {
+function battle (computerSelection, playerSelection) {
   const winMsg = `You win! ${playerSelection} beats ${computerSelection}`;
   const loseMsg = `You lose! ${computerSelection} beats ${playerSelection}`;
   const drawMsg = `Draw! Both of you choose ${playerSelection}`;
@@ -38,35 +44,56 @@ function playRound (computerSelection, playerSelection) {
   }
 }
 
-function game() {
-  let playerScore = 0;
-  let compScore = 0;
+function playRound(playerHand) {
+    playerHand.classList.add("clicked");
+    let playerSelection = playerHand.id;
+    let computerSelection= computerPlay();
+    let matchResultMsg = battle(computerSelection, playerSelection)
+    const matchResult = document.querySelector("#match-container-result");
+    matchResult.innerHTML = matchResultMsg;
 
-  for (let i = 0; i < 5; i++) {
-    let computerSelection = computerPlay();
-    let playerSelection = prompt("please choose paper, rock, or scissors").toLowerCase();
-    let result = playRound(computerSelection, playerSelection);
-
-    if (result.includes("win")) {
+    if (matchResultMsg.includes("win")) {
       playerScore++;
-    } else if(result.includes("lose")) {
+    } else if(matchResultMsg.includes("lose")) {
       compScore++;
     }
+    scoreTablePlayer.innerHTML = playerScore
+    scoreTableComp.innerHTML = compScore
 
-    console.log(`Round ${i+1} - ${result}
-      score
-      player: ${playerScore}
-      computer: ${compScore}
-      `)
-  }
+    const finalResult = document.querySelector("#score-table-finalResult");
+    if (playerScore == 5) {
+      finalResult.innerHTML="Final result : YOU WIN!"
+      document.addEventListener("click",handler,true);
 
-  if (playerScore-compScore > 0) {
-    console.log("Final result : YOU WIN!");
-  } else if (playerScore-compScore < 0) {
-    console.log("Final result : you lose...");
-  } else {
-    console.log("Final result : It is a draw");
-  }
+      function handler(e){
+        e.stopPropagation();
+        e.preventDefault();
+      }
+    } else if (compScore == 5) {
+      finalResult.innerHTML="Final result : you lose..."
+      document.addEventListener("click",handler,true);
+
+      function handler(e){
+        e.stopPropagation();
+        e.preventDefault();
+      }
+    }
+
+
 }
 
-game();
+
+let playerScore = 0;
+let compScore = 0;
+const scoreTablePlayer = document.querySelector("#score-table-playerScore");
+const scoreTableComp = document.querySelector("#score-table-compScore");
+scoreTablePlayer.innerHTML = playerScore
+scoreTableComp.innerHTML = compScore
+
+const playerHandAll = document.querySelectorAll(".player-hand");
+playerHandAll.forEach((playerHand)=>playerHand.addEventListener("transitionend", removeTransition))
+playerHandAll.forEach((playerHand)=> {
+  playerHand.addEventListener("click", function() {
+    playRound(playerHand)
+  });
+  })
