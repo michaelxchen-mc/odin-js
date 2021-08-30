@@ -1,0 +1,94 @@
+body {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+#container {
+  width: 400px;
+  height: 550px;
+  background-color: grey;
+  padding: 20px;
+}
+
+#display {
+  width: 100%;
+  height: 200px;
+  background-color: green;
+}
+
+#button-area {
+  display : grid;
+  height: 350px;
+  grid-template-rows: repeat(5, calc((100% - 60px)/5));
+  grid-template-areas:
+    'clear clear del del'
+    'seven eight nine divide'
+    'four five six multiply'
+    'one two three subtract'
+    'decimal zero equal add';
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
+#button-area > div {
+  background-color: red;
+  line-height: 58px; /*this value should equal to the grid cell height. */
+  text-align: center;
+
+}
+
+
+#btn-clear {
+    grid-area: clear;
+}
+#btn-del {
+    grid-area: del;
+}
+#btn-decimal {
+    grid-area: decimal;
+}
+#btn-add {
+    grid-area: add;
+}
+#btn-subtract {
+    grid-area: subtract;
+}
+#btn-divide {
+    grid-area: divide;
+}
+#btn-multiply {
+    grid-area: multiply;
+}
+#btn-equal {
+    grid-area: equal;
+}
+#btn-1 {
+    grid-area: one;
+}
+#btn-2 {
+    grid-area: two;
+}
+#btn-3 {
+    grid-area: three;
+}
+#btn-4 {
+    grid-area: four;
+}
+#btn-5 {
+    grid-area: five;
+}
+#btn-6 {
+    grid-area: six;
+}
+#btn-7 {
+    grid-area: seven;
+}
+#btn-8 {
+    grid-area: eight;
+}
+#btn-9 {
+    grid-area: nine;
+}
+#btn-0 {
+    grid-area: zero;
+}
