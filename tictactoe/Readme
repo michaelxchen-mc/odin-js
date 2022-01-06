@@ -1,0 +1,16 @@
+
+
+TODOLIST:
+1) tambahkan animasi transisi untuk :
+    -gambar ketika klik
+    -muncul msgBox
+    -clean up ketika ada pemenang
+    -ketika button di tekan
+2) tambahkan shadow dan glow di tempat yang cocok
+3) ubah font menjadi lebih bagus
+4) TIE!!
+5) ada bug aneh dimana terkadang garis pemenang yang digambar berbeda dengan seharusnya.
+  bug ini muncul ketika sudah multiple playthrough
+
+LESSON : design principle itu penting suapaya mudah debug. kalau game simple
+        seperti tictactoe aja bisa bikin pusing debug, apalagi game besar
