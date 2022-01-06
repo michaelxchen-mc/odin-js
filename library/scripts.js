@@ -1,3 +1,5 @@
+
+/*
   //constructor
 function book(id, title, author, pages, years, genres, isRead) {
   this.id = id
@@ -16,7 +18,18 @@ function book(id, title, author, pages, years, genres, isRead) {
       return text
     }
   }
-
+*/
+class book {
+  constructor(id, title, author, pages, years, genres, isRead) {
+    this.id = id
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.years = years
+    this.genres = genres;
+    this.isRead = isRead;
+  }
+}
 
 function addBookToLibrary() {
       const theHobbit = new book("1","The Hobbit", "J.R.R. Tolkien", "295", "1967", "Fiction", false)
@@ -123,7 +136,19 @@ function save(file) {
   localStorage.setItem('library', JSON.stringify(file));
 }
 
-let myLibrary = JSON.parse(localStorage.getItem('library')); //retrieve the object
+let myLibrary;
+if(localStorage.getItem('library') === null){
+    myLibrary = []
+    addBookToLibrary()
+  } else {
+      myLibrary = JSON.parse(localStorage.getItem('library')); //retrieve the object
+      if (myLibrary.every(element => element === null)){
+        myLibrary = []
+        addBookToLibrary()
+      }
+  }
+
+
 let shelf = document.getElementById("shelf");
 for (let i=0; i<myLibrary.length; i++) {
   if (myLibrary[i]) {
