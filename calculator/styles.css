@@ -2,20 +2,37 @@ body {
   display: flex;
   justify-content: center;
   box-sizing: border-box;
+  background-color: #80BDE3;
 }
 #container {
   width: 400px;
-  height: 550px;
+  height: 500px;
   background-color: grey;
   padding: 20px;
 }
-
+/*Below is css for display section*/
 #display {
   width: 100%;
-  height: 200px;
-  background-color: green;
+  height: 150px;
+
+  font-size: 32px;
+}
+#display-input {
+  height : 75px;
+  background-color : green;
+
+  line-height: 75px;
+  text-align: right;
+}
+#display-result {
+  height : 75px;
+  background-color: blue;
+
+  text-align: right;
+  line-height: 75px;
 }
 
+/*Below is css for button section*/
 #button-area {
   display : grid;
   height: 350px;
@@ -29,12 +46,11 @@ body {
   grid-gap: 10px;
   margin-top: 20px;
 }
-
 #button-area > div {
   background-color: red;
   line-height: 58px; /*this value should equal to the grid cell height. */
   text-align: center;
-
+  font-size: 20px;
 }
 
 
