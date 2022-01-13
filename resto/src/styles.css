@@ -1,0 +1,98 @@
+html, body {
+  height:100%;
+  font-size: 12px;
+}
+/*for mobile phones*/
+body {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav {
+}
+#logo {
+  width: 80px;
+  height: 80px;
+  margin-left: 10px;
+}
+button {
+  background-color: black; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: grey;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: black;
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 3em;
+
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#promo{
+  height: 500px;
+  width: auto;
+  margin: 0 10px;
+}
+#main-text {
+  font-size: 2em;
+}
+
+.menu{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  justify-content: center;
+  margin: 10px;
+}
+.menu-card{
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.card-image {
+  height: 180px;
+  width: 180px;
+}
+
+.location{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.loc-card{
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1.8em;
+  width:50%;
+  margin: 20px;
+}
+.card-city {
+  font-weight: bold;
+}
